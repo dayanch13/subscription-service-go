@@ -1,5 +1,5 @@
 # Subscription Service Go
-Тестовое задание Junior Golang Developer Effective Mobile
+Тестовое задание Junior Golang Developer Effective Mobile.
 Задача: спроектировать и реализовать REST-сервис для агрегации данных об
 онлайн-подписках пользователей.
 Требования:
@@ -30,3 +30,30 @@
 “start_date”: “07-2025”
 }
 ```
+
+
+#Запуск сервиса
+1. Установите зависимости:
+  go mod download
+2. Запустите сервис:
+   docker-compose up --build
+3. Откройте Swagger документацию:
+   http://localhost:8080/swagger/index.html
+#Примеры запросов
+Создание подписки:
+  curl -X POST "http://localhost:8080/api/v1/subscriptions" \
+-H "Content-Type: application/json" \
+-d '{
+  "service_name": "Yandex Plus",
+  "price": 400,
+  "user_id": "60601fee-2bf1-4721-ae6f-7636e79a0cba",
+  "start_date": "07-2025"
+  }'
+Расчет стоимости:
+  curl -X POST "http://localhost:8080/api/v1/subscriptions/cost" \
+-H "Content-Type: application/json" \
+-d '{
+  "start_period": "01-2025",
+  "end_period": "12-2025",
+  "user_id": "60601fee-2bf1-4721-ae6f-7636e79a0cba"
+}'  
