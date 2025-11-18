@@ -1,6 +1,7 @@
 package service
 
 import (
+	"github.com/google/uuid"
 	"log"
 	"subscription-service-go/internal/model"
 	"subscription-service-go/internal/repository/postgres"
