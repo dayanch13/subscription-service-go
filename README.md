@@ -32,15 +32,17 @@
 ```
 
 
-#Запуск сервиса
+# Запуск сервиса
 1. Установите зависимости:
   go mod download
 2. Запустите сервис:
    docker-compose up --build
 3. Откройте Swagger документацию:
    http://localhost:8080/swagger/index.html
-#Примеры запросов
-Создание подписки:
+   
+# Примеры запросов
+
+1. Создание подписки:
   curl -X POST "http://localhost:8080/api/v1/subscriptions" \
 -H "Content-Type: application/json" \
 -d '{
@@ -49,7 +51,8 @@
   "user_id": "60601fee-2bf1-4721-ae6f-7636e79a0cba",
   "start_date": "07-2025"
   }'
-Расчет стоимости:
+
+2. Расчет стоимости:
   curl -X POST "http://localhost:8080/api/v1/subscriptions/cost" \
 -H "Content-Type: application/json" \
 -d '{
